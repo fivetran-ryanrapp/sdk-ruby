@@ -1,0 +1,113 @@
+name: Publish Fork Gem
+# Builds all platform gems from the publish-fork-fix branch and publishes them
+# to the fivetran-ryanrapp GitHub Packages gem registry so downstream projects
+# can install the pre-built binaries without needing to compile from source.
+#
+# Consumers add to their Gemfile:
+#   source "https://rubygems.pkg.github.com/fivetran-ryanrapp" do
+#     gem "temporalio", "1.6.0", require: false
+#   end
+#
+# And configure bundler auth (once per machine or in CI secrets):
+#   bundle config set --global https://rubygems.pkg.github.com/fivetran-ryanrapp \
+#     USERNAME:GITHUB_TOKEN
+on:
+  push:
+    branches:
+      - publish-fork-fix
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-platform-gems:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rubyPlatform: aarch64-linux
+          - rubyPlatform: aarch64-linux-musl
+          - rubyPlatform: x86_64-linux
+            gccVersion: "10"
+          - rubyPlatform: x86_64-linux-musl
+          - rubyPlatform: arm64-darwin
+          - rubyPlatform: x86_64-darwin
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          submodules: recursive
+
+      - name: Read protoc version
+        shell: bash
+        run: echo "PROTOC_VERSION=$(tr -d '\n' < .protoc-version)" >> "$GITHUB_ENV"
+
+      - name: Setup Ruby and Rust
+        uses: oxidize-rb/actions/setup-ruby-and-rust@e5f9a49a7812a078584072f6e3f657ad247c8771 # v1
+        with:
+          ruby-version: "4.0"
+          bundler-cache: false
+          cargo-cache: true
+          cargo-vendor: true
+          working-directory: ./temporalio
+          cache-version: v1-${{ matrix.rubyPlatform }}
+
+      - name: Build rb-sys-dock image
+        id: build-rb-sys-dock-image
+        working-directory: ./temporalio
+        run: |
+          gem install rb_sys --no-document
+          rb_sys_version="$(ruby -e 'require "rb_sys/version"; puts RbSys::VERSION')"
+          custom_image="temporalio-rbsys/${{ matrix.rubyPlatform }}:${rb_sys_version}-protoc-${PROTOC_VERSION}"
+          docker build \
+            --platform linux/amd64 \
+            --build-arg BASE_IMAGE="rbsys/${{ matrix.rubyPlatform }}:${rb_sys_version}" \
+            --build-arg GCC_VERSION="${{ matrix.gccVersion || '' }}" \
+            --build-arg PROTOC_VERSION="${PROTOC_VERSION}" \
+            -t "$custom_image" \
+            -f ../.github/docker/rb-sys-protoc.Dockerfile \
+            ..
+          echo "image=$custom_image" >> "$GITHUB_OUTPUT"
+
+      - name: Cross compile gem
+        id: cross-gem
+        working-directory: ./temporalio
+        run: |
+          RCD_IMAGE="${{ steps.build-rb-sys-dock-image.outputs.image }}" rb-sys-dock --platform "${{ matrix.rubyPlatform }}" --ruby-versions "3.3,3.4,4.0" --mount-toolchains --build
+          echo "gem-path=$(find pkg -name '*-${{ matrix.rubyPlatform }}.gem')" >> "$GITHUB_OUTPUT"
+
+      - name: Upload gem artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          if-no-files-found: error
+          name: ${{ matrix.rubyPlatform }}-gem
+          path: ./temporalio/${{ steps.cross-gem.outputs.gem-path }}
+
+  publish:
+    needs: build-platform-gems
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all platform gems
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          path: gems
+          merge-multiple: true
+
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Publish to GitHub Packages
+        run: |
+          for gem in gems/*.gem; do
+            echo "Publishing $gem..."
+            gem push \
+              --key github \
+              --host https://rubygems.pkg.github.com/fivetran-ryanrapp \
+              "$gem"
+          done
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.GITHUB_TOKEN }}
