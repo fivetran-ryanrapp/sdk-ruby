@@ -130,7 +130,7 @@ class Temporalio::Api::Sdk::V1::WorkflowDefinition
   end
 
   # Query definitions, sorted by name.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def query_definitions=(value)
   end
 
@@ -145,7 +145,7 @@ class Temporalio::Api::Sdk::V1::WorkflowDefinition
   end
 
   # Signal definitions, sorted by name.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def signal_definitions=(value)
   end
 
@@ -160,7 +160,7 @@ class Temporalio::Api::Sdk::V1::WorkflowDefinition
   end
 
   # Update definitions, sorted by name.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def update_definitions=(value)
   end
 

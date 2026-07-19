@@ -538,7 +538,7 @@ class Temporalio::Api::Batch::V1::BatchOperationReset
   # Operations to perform after the workflow has been reset. These operations will be applied
 # to the *new* run of the workflow execution in the order they are provided.
 # All operations are applied to the workflow before the first new workflow task is generated
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def post_reset_operations=(value)
   end
 

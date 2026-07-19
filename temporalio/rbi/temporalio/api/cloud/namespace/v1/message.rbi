@@ -208,7 +208,7 @@ class Temporalio::Api::Cloud::Namespace::V1::MtlsAuthSpec
   # Certificate filters which, if specified, only allow connections from client certificates whose distinguished name properties match at least one of the filters.
 # This allows limiting access to specific end-entity certificates.
 # Optional, default is empty.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def certificate_filters=(value)
   end
 
@@ -1061,8 +1061,8 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceSpec
     retention_days: 0,
     mtls_auth: nil,
     api_key_auth: nil,
-    custom_search_attributes: ::Google::Protobuf::Map.new(:string, :string),
-    search_attributes: ::Google::Protobuf::Map.new(:string, :enum),
+    custom_search_attributes: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
+    search_attributes: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :enum),
     codec_server: nil,
     lifecycle: nil,
     high_availability: nil,
@@ -1118,7 +1118,7 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceSpec
 # Example: ["aws-us-west-2"].
 # Deprecated: Use replicas field instead.
 # temporal:versioning:max_version=v0.15.0
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def regions=(value)
   end
 
@@ -1214,7 +1214,7 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceSpec
 # Optional, default is empty.
 # Deprecated: Not supported after v0.3.0 api version. Use search_attributes instead.
 # temporal:versioning:max_version=v0.3.0
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def custom_search_attributes=(value)
   end
 
@@ -1245,7 +1245,7 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceSpec
 # Optional, default is empty.
 # temporal:versioning:min_version=v0.3.0
 # temporal:enums:replaces=custom_search_attributes
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def search_attributes=(value)
   end
 
@@ -1323,7 +1323,7 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceSpec
   # The private connectivity configuration for the namespace.
 # This will apply the connectivity rules specified to the namespace.
 # temporal:versioning:min_version=v0.6.0
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def connectivity_rule_ids=(value)
   end
 
@@ -1382,7 +1382,7 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceSpec
 # Use HighAvailabilitySpec to set the preferred primary replica ID.
 # If the preferred primary replica ID is not set, the first replica in this replicas list will be the preferred primary.
 # temporal:versioning:min_version=v0.13.0
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def replicas=(value)
   end
 
@@ -1634,7 +1634,7 @@ class Temporalio::Api::Cloud::Namespace::V1::AWSPrivateLinkInfo
   end
 
   # The list of principal arns that are allowed to access the namespace on the private link.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def allowed_principal_arns=(value)
   end
 
@@ -1649,7 +1649,7 @@ class Temporalio::Api::Cloud::Namespace::V1::AWSPrivateLinkInfo
   end
 
   # The list of vpc endpoint service names that are associated with the namespace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def vpc_endpoint_service_names=(value)
   end
 
@@ -1811,9 +1811,9 @@ class Temporalio::Api::Cloud::Namespace::V1::Namespace
     private_connectivities: [],
     created_time: nil,
     last_modified_time: nil,
-    region_status: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Cloud::Namespace::V1::NamespaceRegionStatus),
+    region_status: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Cloud::Namespace::V1::NamespaceRegionStatus),
     connectivity_rules: [],
-    tags: ::Google::Protobuf::Map.new(:string, :string),
+    tags: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     capacity: nil,
     replicas: []
   )
@@ -1978,7 +1978,7 @@ class Temporalio::Api::Cloud::Namespace::V1::Namespace
   end
 
   # The private connectivities for the namespace, if any.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def private_connectivities=(value)
   end
 
@@ -2032,7 +2032,7 @@ class Temporalio::Api::Cloud::Namespace::V1::Namespace
 # The id of the region is the key and the status is the value of the map.
 # deprecated: Use replicas field instead.
 # temporal:versioning:max_version=v0.15.0
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def region_status=(value)
   end
 
@@ -2050,7 +2050,7 @@ class Temporalio::Api::Cloud::Namespace::V1::Namespace
   end
 
   # The connectivity rules that are set on this namespace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def connectivity_rules=(value)
   end
 
@@ -2065,7 +2065,7 @@ class Temporalio::Api::Cloud::Namespace::V1::Namespace
   end
 
   # The tags for the namespace.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def tags=(value)
   end
 
@@ -2097,7 +2097,7 @@ class Temporalio::Api::Cloud::Namespace::V1::Namespace
 
   # The status of each replica where the namespace is available.
 # temporal:versioning:min_version=v0.13.0
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def replicas=(value)
   end
 
@@ -3340,7 +3340,7 @@ class Temporalio::Api::Cloud::Namespace::V1::NamespaceCapacityInfo::CapacityMode
 
   # The valid TRU (Temporal Resource Unit) values that can be set.
 # These are the discrete capacity tiers available for selection.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def valid_tru_values=(value)
   end
 

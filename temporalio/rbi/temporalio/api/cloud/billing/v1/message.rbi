@@ -223,7 +223,7 @@ class Temporalio::Api::Cloud::Billing::V1::BillingReport
 
   # The download information for the billing report.
 # For future-proofness this is repeated as we may return multiple files (e.g. csv+meta/json, split by size/date, etc.)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def download_info=(value)
   end
 

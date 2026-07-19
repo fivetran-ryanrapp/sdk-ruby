@@ -56,12 +56,12 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
     schemes: [],
     consumes: [],
     produces: [],
-    responses: ::Google::Protobuf::Map.new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::Response),
+    responses: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::Response),
     security_definitions: nil,
     security: [],
     tags: [],
     external_docs: nil,
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -177,7 +177,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
   # The transfer protocol of the API. Values MUST be from the list: "http",
 # "https", "ws", "wss". If the schemes is not included, the default scheme to
 # be used is the one used to access the OpenAPI definition itself.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def schemes=(value)
   end
 
@@ -198,7 +198,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
   # A list of MIME types the APIs can consume. This is global to all APIs but
 # can be overridden on specific API calls. Value MUST be as described under
 # Mime Types.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def consumes=(value)
   end
 
@@ -219,7 +219,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
   # A list of MIME types the APIs can produce. This is global to all APIs but
 # can be overridden on specific API calls. Value MUST be as described under
 # Mime Types.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def produces=(value)
   end
 
@@ -238,7 +238,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
 
   # An object to hold responses that can be used across operations. This
 # property does not define global responses for all operations.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def responses=(value)
   end
 
@@ -275,7 +275,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
 # The list of values describes alternative security schemes that can be used
 # (that is, there is a logical OR between the security requirements).
 # Individual operations can override this definition.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def security=(value)
   end
 
@@ -295,7 +295,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
 
   # A list of tags for API documentation control. Tags can be used for logical
 # grouping of operations by resources or any other qualifier.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def tags=(value)
   end
 
@@ -330,7 +330,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Swagger
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -428,11 +428,11 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
     operation_id: "",
     consumes: [],
     produces: [],
-    responses: ::Google::Protobuf::Map.new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::Response),
+    responses: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::Response),
     schemes: [],
     deprecated: false,
     security: [],
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value),
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value),
     parameters: nil
   )
   end
@@ -445,7 +445,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
 
   # A list of tags for API documentation control. Tags can be used for logical
 # grouping of operations by resources or any other qualifier.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def tags=(value)
   end
 
@@ -540,7 +540,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
   # A list of MIME types the operation can consume. This overrides the consumes
 # definition at the OpenAPI Object. An empty value MAY be used to clear the
 # global definition. Value MUST be as described under Mime Types.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def consumes=(value)
   end
 
@@ -561,7 +561,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
   # A list of MIME types the operation can produce. This overrides the produces
 # definition at the OpenAPI Object. An empty value MAY be used to clear the
 # global definition. Value MUST be as described under Mime Types.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def produces=(value)
   end
 
@@ -580,7 +580,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
 
   # The list of possible responses as they are returned from executing this
 # operation.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def responses=(value)
   end
 
@@ -600,7 +600,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
   # The transfer protocol for the operation. Values MUST be from the list:
 # "http", "https", "ws", "wss". The value overrides the OpenAPI Object
 # schemes definition.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def schemes=(value)
   end
 
@@ -643,7 +643,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
 # (that is, there is a logical OR between the security requirements). This
 # definition overrides any declared top-level security. To remove a top-level
 # security declaration, an empty array can be used.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def security=(value)
   end
 
@@ -666,7 +666,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Operation
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -758,7 +758,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Parameters
 
   # `Headers` is one or more HTTP header parameter.
 # See: https://swagger.io/docs/specification/2-0/describing-parameters/#header-parameters
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def headers=(value)
   end
 
@@ -1094,9 +1094,9 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Response
   def initialize(
     description: "",
     schema: nil,
-    headers: ::Google::Protobuf::Map.new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::Header),
-    examples: ::Google::Protobuf::Map.new(:string, :string),
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::Header),
+    examples: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -1146,7 +1146,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Response
   # `Headers` A list of headers that are sent with the response.
 # `Header` name is expected to be a string in the canonical format of the MIME header key
 # See: https://golang.org/pkg/net/textproto/#CanonicalMIMEHeaderKey
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -1165,7 +1165,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Response
 
   # `Examples` gives per-mimetype response examples.
 # See: https://github.com/OAI/OpenAPI-Specification/blob/3.0.0/versions/2.0.md#example-object
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def examples=(value)
   end
 
@@ -1185,7 +1185,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Response
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -1274,7 +1274,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Info
     contact: nil,
     license: nil,
     version: "",
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -1384,7 +1384,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Info
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -1941,7 +1941,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::EnumSchema
     external_docs: nil,
     example: "",
     ref: "",
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -2078,7 +2078,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::EnumSchema
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -2209,7 +2209,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::JSONSchema
     format: "",
     enum: [],
     field_configuration: nil,
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -2490,7 +2490,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::JSONSchema
   def required
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def required=(value)
   end
 
@@ -2504,7 +2504,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::JSONSchema
   end
 
   # Items in 'array' must be unique.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def array=(value)
   end
 
@@ -2517,7 +2517,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::JSONSchema
   def type
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def type=(value)
   end
 
@@ -2546,7 +2546,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::JSONSchema
   end
 
   # Items in `enum` must be unique https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-5.5.1
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def enum=(value)
   end
 
@@ -2580,7 +2580,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::JSONSchema
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -2643,7 +2643,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Tag
     name: "",
     description: "",
     external_docs: nil,
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -2711,7 +2711,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Tag
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -2773,7 +2773,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityDefinitions
     ).void
   end
   def initialize(
-    security: ::Google::Protobuf::Map.new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityScheme)
+    security: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityScheme)
   )
   end
 
@@ -2785,7 +2785,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityDefinitions
 
   # A single security scheme definition, mapping a "name" to the scheme it
 # defines.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def security=(value)
   end
 
@@ -2863,7 +2863,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityScheme
     authorization_url: "",
     token_url: "",
     scopes: nil,
-    extensions: ::Google::Protobuf::Map.new(:string, :message, Google::Protobuf::Value)
+    extensions: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Google::Protobuf::Value)
   )
   end
 
@@ -3030,7 +3030,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityScheme
   # Custom properties that start with "x-" such as "x-foo" used to describe
 # extra functionality that is not covered by the standard OpenAPI Specification.
 # See: https://swagger.io/docs/specification/2-0/swagger-extensions/
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def extensions=(value)
   end
 
@@ -3095,7 +3095,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityRequirement
     ).void
   end
   def initialize(
-    security_requirement: ::Google::Protobuf::Map.new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityRequirement::SecurityRequirementValue)
+    security_requirement: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityRequirement::SecurityRequirementValue)
   )
   end
 
@@ -3111,7 +3111,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityRequirement
 # the Security Definitions. If the security scheme is of type "oauth2",
 # then the value is a list of scope names required for the execution.
 # For other security scheme types, the array MUST be empty.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def security_requirement=(value)
   end
 
@@ -3171,7 +3171,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Scopes
     ).void
   end
   def initialize(
-    scope: ::Google::Protobuf::Map.new(:string, :string)
+    scope: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string)
   )
   end
 
@@ -3183,7 +3183,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::Scopes
 
   # Maps between a name of a scope to a short description of it (as the value
 # of the property).
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def scope=(value)
   end
 
@@ -3320,7 +3320,7 @@ class Grpc::Gateway::ProtocGenOpenapiv2::Options::SecurityRequirement::SecurityR
   def scope
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def scope=(value)
   end
 

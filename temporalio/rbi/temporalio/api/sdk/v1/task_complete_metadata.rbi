@@ -64,7 +64,7 @@ class Temporalio::Api::Sdk::V1::WorkflowTaskCompletedMetadata
 #
 # (-- api-linter: core::0141::forbidden-types=disabled
 #     aip.dev/not-precedent: These really shouldn't have negative values. --)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def core_used_flags=(value)
   end
 
@@ -107,7 +107,7 @@ class Temporalio::Api::Sdk::V1::WorkflowTaskCompletedMetadata
 #
 # (-- api-linter: core::0141::forbidden-types=disabled
 #     aip.dev/not-precedent: These really shouldn't have negative values. --)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def lang_used_flags=(value)
   end
 

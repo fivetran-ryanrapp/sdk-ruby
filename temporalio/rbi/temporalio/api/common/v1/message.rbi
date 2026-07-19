@@ -94,7 +94,7 @@ class Temporalio::Api::Common::V1::Payloads
   def payloads
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def payloads=(value)
   end
 
@@ -150,7 +150,7 @@ class Temporalio::Api::Common::V1::Payload
     ).void
   end
   def initialize(
-    metadata: ::Google::Protobuf::Map.new(:string, :bytes),
+    metadata: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :bytes),
     data: "",
     external_payloads: []
   )
@@ -160,7 +160,7 @@ class Temporalio::Api::Common::V1::Payload
   def metadata
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def metadata=(value)
   end
 
@@ -186,7 +186,7 @@ class Temporalio::Api::Common::V1::Payload
   end
 
   # Details about externally stored payloads associated with this payload.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def external_payloads=(value)
   end
 
@@ -240,7 +240,7 @@ class Temporalio::Api::Common::V1::SearchAttributes
     ).void
   end
   def initialize(
-    indexed_fields: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    indexed_fields: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -248,7 +248,7 @@ class Temporalio::Api::Common::V1::SearchAttributes
   def indexed_fields
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def indexed_fields=(value)
   end
 
@@ -300,7 +300,7 @@ class Temporalio::Api::Common::V1::Memo
     ).void
   end
   def initialize(
-    fields: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    fields: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -308,7 +308,7 @@ class Temporalio::Api::Common::V1::Memo
   def fields
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def fields=(value)
   end
 
@@ -361,7 +361,7 @@ class Temporalio::Api::Common::V1::Header
     ).void
   end
   def initialize(
-    fields: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    fields: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -369,7 +369,7 @@ class Temporalio::Api::Common::V1::Header
   def fields
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def fields=(value)
   end
 
@@ -711,7 +711,7 @@ class Temporalio::Api::Common::V1::RetryPolicy
 
   # Non-Retryable errors types. Will stop retrying if the error type matches this list. Note that
 # this is not a substring match, the error *type* (not message) must match exactly.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def non_retryable_error_types=(value)
   end
 
@@ -1170,7 +1170,7 @@ class Temporalio::Api::Common::V1::ResetOptions
   end
 
   # Event types not to be reapplied
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def reset_reapply_exclude_types=(value)
   end
 
@@ -1267,7 +1267,7 @@ class Temporalio::Api::Common::V1::Callback
 
   # Links associated with the callback. It can be used to link to underlying resources of the
 # callback.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -2240,7 +2240,7 @@ class Temporalio::Api::Common::V1::Callback::Nexus
   end
   def initialize(
     url: "",
-    header: ::Google::Protobuf::Map.new(:string, :string)
+    header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string)
   )
   end
 
@@ -2265,7 +2265,7 @@ class Temporalio::Api::Common::V1::Callback::Nexus
   end
 
   # Header to attach to callback request.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def header=(value)
   end
 

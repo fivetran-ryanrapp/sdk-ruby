@@ -227,7 +227,7 @@ class Temporalio::Api::Deployment::V1::DeploymentInfo
     deployment: nil,
     create_time: nil,
     task_queue_infos: [],
-    metadata: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    metadata: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     is_current: false
   )
   end
@@ -260,7 +260,7 @@ class Temporalio::Api::Deployment::V1::DeploymentInfo
   def task_queue_infos
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_infos=(value)
   end
 
@@ -276,7 +276,7 @@ class Temporalio::Api::Deployment::V1::DeploymentInfo
 
   # A user-defined set of key-values. Can be updated as part of write operations to the
 # deployment, such as `SetCurrentDeployment`.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def metadata=(value)
   end
 
@@ -347,7 +347,7 @@ class Temporalio::Api::Deployment::V1::UpdateDeploymentMetadata
     ).void
   end
   def initialize(
-    upsert_entries: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    upsert_entries: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     remove_entries: []
   )
   end
@@ -356,7 +356,7 @@ class Temporalio::Api::Deployment::V1::UpdateDeploymentMetadata
   def upsert_entries
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def upsert_entries=(value)
   end
 
@@ -370,7 +370,7 @@ class Temporalio::Api::Deployment::V1::UpdateDeploymentMetadata
   end
 
   # List of keys to remove from the metadata.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def remove_entries=(value)
   end
 
@@ -763,7 +763,7 @@ class Temporalio::Api::Deployment::V1::WorkerDeploymentVersionInfo
 
   # All the Task Queues that have ever polled from this Deployment version.
 # Deprecated. Use `version_task_queues` in DescribeWorkerDeploymentVersionResponse instead.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_infos=(value)
   end
 
@@ -1143,7 +1143,7 @@ class Temporalio::Api::Deployment::V1::WorkerDeploymentInfo
 # - It does not receive new executions (is not current or ramping)
 # - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status)
 # - It is drained (see WorkerDeploymentVersionInfo.drainage_status)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def version_summaries=(value)
   end
 
@@ -1379,7 +1379,7 @@ class Temporalio::Api::Deployment::V1::VersionMetadata
     ).void
   end
   def initialize(
-    entries: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    entries: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -1389,7 +1389,7 @@ class Temporalio::Api::Deployment::V1::VersionMetadata
   end
 
   # Arbitrary key-values.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def entries=(value)
   end
 

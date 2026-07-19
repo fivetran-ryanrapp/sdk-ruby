@@ -799,7 +799,7 @@ class Temporalio::Api::Worker::V1::WorkerHeartbeat
   end
 
   # Plugins currently in use by this SDK.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def plugins=(value)
   end
 
@@ -814,7 +814,7 @@ class Temporalio::Api::Worker::V1::WorkerHeartbeat
   end
 
   # Storage drivers in use by this SDK.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def drivers=(value)
   end
 
@@ -1136,7 +1136,7 @@ class Temporalio::Api::Worker::V1::WorkerListInfo
   end
 
   # Plugins currently in use by this SDK.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def plugins=(value)
   end
 
@@ -1151,7 +1151,7 @@ class Temporalio::Api::Worker::V1::WorkerListInfo
   end
 
   # Storage drivers in use by this SDK.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def drivers=(value)
   end
 

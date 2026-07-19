@@ -569,7 +569,7 @@ class Temporalio::Api::Workflow::V1::WorkflowExecutionExtendedInfo
     last_reset_time: nil,
     original_start_time: nil,
     reset_run_id: "",
-    request_id_infos: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Workflow::V1::RequestIdInfo),
+    request_id_infos: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Workflow::V1::RequestIdInfo),
     pause_info: nil
   )
   end
@@ -679,7 +679,7 @@ class Temporalio::Api::Workflow::V1::WorkflowExecutionExtendedInfo
 # Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
 # calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
 # used in the StartWorkflowExecution request).
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def request_id_infos=(value)
   end
 
@@ -2201,7 +2201,7 @@ class Temporalio::Api::Workflow::V1::ResetPoints
   def points
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def points=(value)
   end
 
@@ -4867,7 +4867,7 @@ class Temporalio::Api::Workflow::V1::PostResetOperation::SignalWorkflow
   end
 
   # Links to be associated with the WorkflowExecutionSignaled event.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 

@@ -350,7 +350,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   end
 
   # Match seconds (0-59)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def second=(value)
   end
 
@@ -365,7 +365,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   end
 
   # Match minutes (0-59)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def minute=(value)
   end
 
@@ -380,7 +380,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   end
 
   # Match hours (0-23)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def hour=(value)
   end
 
@@ -399,7 +399,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   # Match days of the month (1-31)
 # (-- api-linter: core::0140::prepositions=disabled
 #     aip.dev/not-precedent: standard name of field --)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def day_of_month=(value)
   end
 
@@ -416,7 +416,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   end
 
   # Match months (1-12)
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def month=(value)
   end
 
@@ -431,7 +431,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   end
 
   # Match years.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def year=(value)
   end
 
@@ -446,7 +446,7 @@ class Temporalio::Api::Schedule::V1::StructuredCalendarSpec
   end
 
   # Match days of the week (0-6; 0 is Sunday).
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def day_of_week=(value)
   end
 
@@ -645,7 +645,7 @@ class Temporalio::Api::Schedule::V1::ScheduleSpec
   end
 
   # Calendar-based specifications of times.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def structured_calendar=(value)
   end
 
@@ -698,7 +698,7 @@ class Temporalio::Api::Schedule::V1::ScheduleSpec
 # @every <interval>[/<phase>] is accepted and gets compiled into an
 # IntervalSpec instead. <interval> and <phase> should be a decimal integer
 # with a unit suffix s, m, h, or d.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def cron_string=(value)
   end
 
@@ -732,7 +732,7 @@ class Temporalio::Api::Schedule::V1::ScheduleSpec
   end
 
   # Calendar-based specifications of times.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def calendar=(value)
   end
 
@@ -747,7 +747,7 @@ class Temporalio::Api::Schedule::V1::ScheduleSpec
   end
 
   # Interval-based specifications of times.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def interval=(value)
   end
 
@@ -764,7 +764,7 @@ class Temporalio::Api::Schedule::V1::ScheduleSpec
 
   # Any timestamps matching any of exclude_* will be skipped.
 # Deprecated. Use exclude_structured_calendar.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def exclude_calendar=(value)
   end
 
@@ -778,7 +778,7 @@ class Temporalio::Api::Schedule::V1::ScheduleSpec
   def exclude_structured_calendar
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def exclude_structured_calendar=(value)
   end
 
@@ -1666,7 +1666,7 @@ class Temporalio::Api::Schedule::V1::SchedulePatch
   # If set, runs though the specified time period(s) and takes actions as if that time
 # passed by right now, all at once. The overlap policy can be overridden for the
 # scope of the backfill.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def backfill_request=(value)
   end
 
@@ -1871,7 +1871,7 @@ class Temporalio::Api::Schedule::V1::ScheduleInfo
 # Note that the run_ids in here are the original execution run ids as
 # started by the schedule. If the workflows retried, did continue-as-new,
 # or were reset, they might still be running but with a different run_id.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def running_workflows=(value)
   end
 
@@ -1890,7 +1890,7 @@ class Temporalio::Api::Schedule::V1::ScheduleInfo
   end
 
   # Most recent ten actual action times (including manual triggers).
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def recent_actions=(value)
   end
 
@@ -1905,7 +1905,7 @@ class Temporalio::Api::Schedule::V1::ScheduleInfo
   end
 
   # Next ten scheduled action times.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def future_action_times=(value)
   end
 
@@ -2205,7 +2205,7 @@ class Temporalio::Api::Schedule::V1::ScheduleListInfo
   end
 
   # From info (maybe fewer entries):
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def recent_actions=(value)
   end
 
@@ -2218,7 +2218,7 @@ class Temporalio::Api::Schedule::V1::ScheduleListInfo
   def future_action_times
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def future_action_times=(value)
   end
 

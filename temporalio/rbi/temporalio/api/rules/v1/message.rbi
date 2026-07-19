@@ -159,7 +159,7 @@ class Temporalio::Api::Rules::V1::WorkflowRuleSpec
   end
 
   # WorkflowRuleAction to be taken when the rule is triggered and predicate is matched.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def actions=(value)
   end
 

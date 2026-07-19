@@ -1175,7 +1175,7 @@ class Temporalio::Api::Command::V1::RecordMarkerCommandAttributes
   end
   def initialize(
     marker_name: "",
-    details: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payloads),
+    details: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payloads),
     header: nil,
     failure: nil
   )
@@ -1197,7 +1197,7 @@ class Temporalio::Api::Command::V1::RecordMarkerCommandAttributes
   def details
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def details=(value)
   end
 
@@ -1987,7 +1987,7 @@ class Temporalio::Api::Command::V1::ScheduleNexusOperationCommandAttributes
     operation: "",
     input: nil,
     schedule_to_close_timeout: nil,
-    nexus_header: ::Google::Protobuf::Map.new(:string, :string),
+    nexus_header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     schedule_to_start_timeout: nil,
     start_to_close_timeout: nil
   )
@@ -2102,7 +2102,7 @@ class Temporalio::Api::Command::V1::ScheduleNexusOperationCommandAttributes
 # This is useful for propagating tracing information.
 # Note these headers are not the same as Temporal headers on internal activities and child workflows, these are
 # transmitted to Nexus operations that may be external and are not traditional payloads.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def nexus_header=(value)
   end
 
@@ -2401,7 +2401,7 @@ class Temporalio::Api::Command::V1::Command
   end
 
   # Event Group Markers attached to the command by the workflow author.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def event_group_markers=(value)
   end
 

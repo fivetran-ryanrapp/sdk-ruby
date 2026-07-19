@@ -30,7 +30,7 @@ class Temporalio::Api::Compute::V1::ComputeConfigScalingGroup
   # Optional. The set of task queue types this scaling group serves.
 # If not provided, this scaling group serves all not otherwise defined
 # task types.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_types=(value)
   end
 
@@ -123,7 +123,7 @@ class Temporalio::Api::Compute::V1::ComputeConfig
     ).void
   end
   def initialize(
-    scaling_groups: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroup)
+    scaling_groups: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroup)
   )
   end
 
@@ -145,7 +145,7 @@ class Temporalio::Api::Compute::V1::ComputeConfig
 #
 # The key of the map is the ID of the scaling group used to reference it in subsequent
 # update calls.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def scaling_groups=(value)
   end
 
@@ -298,7 +298,7 @@ class Temporalio::Api::Compute::V1::ComputeConfigSummary
     ).void
   end
   def initialize(
-    scaling_groups: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroupSummary)
+    scaling_groups: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroupSummary)
   )
   end
 
@@ -306,7 +306,7 @@ class Temporalio::Api::Compute::V1::ComputeConfigSummary
   def scaling_groups
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def scaling_groups=(value)
   end
 
@@ -367,7 +367,7 @@ class Temporalio::Api::Compute::V1::ComputeConfigScalingGroupSummary
   def task_queue_types
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_types=(value)
   end
 

@@ -30,7 +30,7 @@ class Temporalio::Api::WorkflowService::V1::RegisterNamespaceRequest
     workflow_execution_retention_period: nil,
     clusters: [],
     active_cluster_name: "",
-    data: ::Google::Protobuf::Map.new(:string, :string),
+    data: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     security_token: "",
     is_global_namespace: false,
     history_archival_state: :ARCHIVAL_STATE_UNSPECIFIED,
@@ -92,7 +92,7 @@ class Temporalio::Api::WorkflowService::V1::RegisterNamespaceRequest
   def clusters
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def clusters=(value)
   end
 
@@ -118,7 +118,7 @@ class Temporalio::Api::WorkflowService::V1::RegisterNamespaceRequest
   end
 
   # A key-value map for any customized purpose.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def data=(value)
   end
 
@@ -385,7 +385,7 @@ class Temporalio::Api::WorkflowService::V1::ListNamespacesResponse
   def namespaces
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def namespaces=(value)
   end
 
@@ -631,7 +631,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeNamespaceResponse
 
   # Contains the historical state of failover_versions for the cluster, truncated to contain only the last N
 # states to ensure that the list does not grow unbounded.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def failover_history=(value)
   end
 
@@ -651,7 +651,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeNamespaceResponse
   # The initial info that client should use for poller group assignment. This information is
 # updated through poll response. Client is supposed to use the info received in the latest
 # poll response.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def poller_group_infos=(value)
   end
 
@@ -1484,7 +1484,7 @@ class Temporalio::Api::WorkflowService::V1::StartWorkflowExecutionRequest
   # Callbacks to be called by the server when this workflow reaches a terminal state.
 # If the workflow continues-as-new, these callbacks will be carried over to the new execution.
 # Callback addresses must be whitelisted in the server's dynamic configuration.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def completion_callbacks=(value)
   end
 
@@ -1522,7 +1522,7 @@ class Temporalio::Api::WorkflowService::V1::StartWorkflowExecutionRequest
   end
 
   # Links to be associated with the workflow.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -1991,7 +1991,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkflowExecutionHistoryResponse
 
   # Raw history is an alternate representation of history that may be returned if configured on
 # the frontend. This is not supported by all SDKs. Either this or `history` will be set.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def raw_history=(value)
   end
 
@@ -2497,7 +2497,7 @@ class Temporalio::Api::WorkflowService::V1::PollWorkflowTaskQueueResponse
     workflow_execution_task_queue: nil,
     scheduled_time: nil,
     started_time: nil,
-    queries: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Query::V1::WorkflowQuery),
+    queries: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Query::V1::WorkflowQuery),
     messages: [],
     poller_scaling_decision: nil,
     poller_group_id: "",
@@ -2762,7 +2762,7 @@ class Temporalio::Api::WorkflowService::V1::PollWorkflowTaskQueueResponse
 
   # Queries that should be executed after applying the history in this task. Responses should be
 # attached to `RespondWorkflowTaskCompletedRequest::query_results`
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def queries=(value)
   end
 
@@ -2778,7 +2778,7 @@ class Temporalio::Api::WorkflowService::V1::PollWorkflowTaskQueueResponse
   end
 
   # Protocol messages piggybacking on a WFT as a transport
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def messages=(value)
   end
 
@@ -2836,7 +2836,7 @@ class Temporalio::Api::WorkflowService::V1::PollWorkflowTaskQueueResponse
 #   2. Try to assign the next poll to a group without any pending polls,
 #   3. If every group has some pending polls, assign the next poll to a group randomly
 #     according to the weights.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def poller_group_infos=(value)
   end
 
@@ -2919,7 +2919,7 @@ class Temporalio::Api::WorkflowService::V1::RespondWorkflowTaskCompletedRequest
     return_new_workflow_task: false,
     force_create_new_workflow_task: false,
     binary_checksum: "",
-    query_results: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Query::V1::WorkflowQueryResult),
+    query_results: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Query::V1::WorkflowQueryResult),
     namespace: "",
     resource_id: "",
     worker_version_stamp: nil,
@@ -2956,7 +2956,7 @@ class Temporalio::Api::WorkflowService::V1::RespondWorkflowTaskCompletedRequest
   end
 
   # A list of commands generated when driving the workflow code in response to the new task
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def commands=(value)
   end
 
@@ -3064,7 +3064,7 @@ class Temporalio::Api::WorkflowService::V1::RespondWorkflowTaskCompletedRequest
   end
 
   # Responses to the `queries` field in the task being responded to
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def query_results=(value)
   end
 
@@ -3130,7 +3130,7 @@ class Temporalio::Api::WorkflowService::V1::RespondWorkflowTaskCompletedRequest
   end
 
   # Protocol messages piggybacking on a WFT as a transport
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def messages=(value)
   end
 
@@ -3349,7 +3349,7 @@ class Temporalio::Api::WorkflowService::V1::RespondWorkflowTaskCompletedResponse
   end
 
   # See `ScheduleActivityTaskCommandAttributes::request_eager_execution`
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def activity_tasks=(value)
   end
 
@@ -3560,7 +3560,7 @@ class Temporalio::Api::WorkflowService::V1::RespondWorkflowTaskFailedRequest
   end
 
   # Protocol messages piggybacking on a WFT as a transport
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def messages=(value)
   end
 
@@ -4324,7 +4324,7 @@ class Temporalio::Api::WorkflowService::V1::PollActivityTaskQueueResponse
 #   2. Try to assign the next poll to a group without any pending polls,
 #   3. If every group has some pending polls, assign the next poll to a group randomly
 #     according to the weights.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def poller_group_infos=(value)
   end
 
@@ -5541,7 +5541,7 @@ class Temporalio::Api::WorkflowService::V1::RespondActivityTaskFailedResponse
 
   # Server validation failures could include
 # last_heartbeat_details payload is too large, request failure is too large
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def failures=(value)
   end
 
@@ -5790,7 +5790,7 @@ class Temporalio::Api::WorkflowService::V1::RespondActivityTaskFailedByIdRespons
 
   # Server validation failures could include
 # last_heartbeat_details payload is too large, request failure is too large
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def failures=(value)
   end
 
@@ -6412,7 +6412,7 @@ class Temporalio::Api::WorkflowService::V1::RequestCancelWorkflowExecutionReques
   end
 
   # Links to be associated with the WorkflowExecutionCanceled event.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -6650,7 +6650,7 @@ class Temporalio::Api::WorkflowService::V1::SignalWorkflowExecutionRequest
   end
 
   # Links to be associated with the WorkflowExecutionSignaled event.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -7181,7 +7181,7 @@ class Temporalio::Api::WorkflowService::V1::SignalWithStartWorkflowExecutionRequ
   end
 
   # Links to be associated with the WorkflowExecutionStarted and WorkflowExecutionSignaled events.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -7505,7 +7505,7 @@ class Temporalio::Api::WorkflowService::V1::ResetWorkflowExecutionRequest
   end
 
   # Event types not to be reapplied
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def reset_reapply_exclude_types=(value)
   end
 
@@ -7524,7 +7524,7 @@ class Temporalio::Api::WorkflowService::V1::ResetWorkflowExecutionRequest
   # Operations to perform after the workflow has been reset. These operations will be applied
 # to the *new* run of the workflow execution in the order they are provided.
 # All operations are applied to the workflow before the first new workflow task is generated
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def post_reset_operations=(value)
   end
 
@@ -7761,7 +7761,7 @@ class Temporalio::Api::WorkflowService::V1::TerminateWorkflowExecutionRequest
   end
 
   # Links to be associated with the WorkflowExecutionTerminated event.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -8112,7 +8112,7 @@ class Temporalio::Api::WorkflowService::V1::ListOpenWorkflowExecutionsResponse
   def executions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -8332,7 +8332,7 @@ class Temporalio::Api::WorkflowService::V1::ListClosedWorkflowExecutionsResponse
   def executions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -8506,7 +8506,7 @@ class Temporalio::Api::WorkflowService::V1::ListWorkflowExecutionsResponse
   def executions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -8680,7 +8680,7 @@ class Temporalio::Api::WorkflowService::V1::ListArchivedWorkflowExecutionsRespon
   def executions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -8856,7 +8856,7 @@ class Temporalio::Api::WorkflowService::V1::ScanWorkflowExecutionsResponse
   def executions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -9033,7 +9033,7 @@ class Temporalio::Api::WorkflowService::V1::CountWorkflowExecutionsResponse
 
   # `groups` contains the groups if the request is grouping by a field.
 # The list might not be complete, and the counts of each group is approximate.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def groups=(value)
   end
 
@@ -9126,7 +9126,7 @@ class Temporalio::Api::WorkflowService::V1::GetSearchAttributesResponse
     ).void
   end
   def initialize(
-    keys: ::Google::Protobuf::Map.new(:string, :enum)
+    keys: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :enum)
   )
   end
 
@@ -9134,7 +9134,7 @@ class Temporalio::Api::WorkflowService::V1::GetSearchAttributesResponse
   def keys
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def keys=(value)
   end
 
@@ -9683,7 +9683,7 @@ class Temporalio::Api::WorkflowService::V1::ShutdownWorkerRequest
 
   # Task queue types that help server cancel outstanding poll RPC
 # calls from SDK. This avoids a race condition that can lead to tasks being lost.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_types=(value)
   end
 
@@ -10075,7 +10075,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkflowExecutionResponse
   def pending_activities
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def pending_activities=(value)
   end
 
@@ -10087,7 +10087,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkflowExecutionResponse
   def pending_children
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def pending_children=(value)
   end
 
@@ -10111,7 +10111,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkflowExecutionResponse
   def callbacks
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def callbacks=(value)
   end
 
@@ -10123,7 +10123,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkflowExecutionResponse
   def pending_nexus_operations
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def pending_nexus_operations=(value)
   end
 
@@ -10361,7 +10361,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeTaskQueueRequest
 
   # Deprecated (as part of the ENHANCED mode deprecation).
 # Task queue types to report info about. If not specified, all types are considered.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_types=(value)
   end
 
@@ -10462,12 +10462,12 @@ class Temporalio::Api::WorkflowService::V1::DescribeTaskQueueResponse
   def initialize(
     pollers: [],
     stats: nil,
-    stats_by_priority_key: ::Google::Protobuf::Map.new(:int32, :message, Temporalio::Api::TaskQueue::V1::TaskQueueStats),
+    stats_by_priority_key: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:int32, :message, Temporalio::Api::TaskQueue::V1::TaskQueueStats),
     versioning_info: nil,
     config: nil,
     effective_rate_limit: nil,
     task_queue_status: nil,
-    versions_info: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::TaskQueue::V1::TaskQueueVersionInfo)
+    versions_info: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::TaskQueue::V1::TaskQueueVersionInfo)
   )
   end
 
@@ -10475,7 +10475,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeTaskQueueResponse
   def pollers
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def pollers=(value)
   end
 
@@ -10513,7 +10513,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeTaskQueueResponse
 # Only set if `report_stats` is set on the request.
 # (-- api-linter: core::0140::prepositions=disabled
 #     aip.dev/not-precedent: "by" is used to clarify the keys and values. --)
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def stats_by_priority_key=(value)
   end
 
@@ -10619,7 +10619,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeTaskQueueResponse
   # Deprecated.
 # Only returned in ENHANCED mode.
 # This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def versions_info=(value)
   end
 
@@ -10723,7 +10723,7 @@ class Temporalio::Api::WorkflowService::V1::GetClusterInfoResponse
     ).void
   end
   def initialize(
-    supported_clients: ::Google::Protobuf::Map.new(:string, :string),
+    supported_clients: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     server_version: "",
     cluster_id: "",
     version_info: nil,
@@ -10744,7 +10744,7 @@ class Temporalio::Api::WorkflowService::V1::GetClusterInfoResponse
 
   # Key is client name i.e "temporal-go", "temporal-java", or "temporal-cli".
 # Value is ranges of supported versions of this client i.e ">1.1.1 <=1.4.0 || ^5.0.0".
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def supported_clients=(value)
   end
 
@@ -11107,7 +11107,7 @@ class Temporalio::Api::WorkflowService::V1::ListTaskQueuePartitionsResponse
   def activity_task_queue_partitions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def activity_task_queue_partitions=(value)
   end
 
@@ -11119,7 +11119,7 @@ class Temporalio::Api::WorkflowService::V1::ListTaskQueuePartitionsResponse
   def workflow_task_queue_partitions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def workflow_task_queue_partitions=(value)
   end
 
@@ -12175,7 +12175,7 @@ class Temporalio::Api::WorkflowService::V1::ListScheduleMatchingTimesResponse
   def start_time
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def start_time=(value)
   end
 
@@ -12485,7 +12485,7 @@ class Temporalio::Api::WorkflowService::V1::ListSchedulesResponse
   def schedules
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def schedules=(value)
   end
 
@@ -12665,7 +12665,7 @@ class Temporalio::Api::WorkflowService::V1::CountSchedulesResponse
 
   # Contains the groups if the request is grouping by a field.
 # The list might not be complete, and the counts of each group is approximate.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def groups=(value)
   end
 
@@ -13095,7 +13095,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkerBuildIdCompatibilityRespons
 # in that version set.
 #
 # There may be fewer sets returned than exist, if the request chose to limit this response.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def major_version_sets=(value)
   end
 
@@ -13373,7 +13373,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerVersioningRulesResponse
   def assignment_rules
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def assignment_rules=(value)
   end
 
@@ -13385,7 +13385,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerVersioningRulesResponse
   def compatible_redirect_rules
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def compatible_redirect_rules=(value)
   end
 
@@ -13544,7 +13544,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkerVersioningRulesResponse
   def assignment_rules
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def assignment_rules=(value)
   end
 
@@ -13556,7 +13556,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkerVersioningRulesResponse
   def compatible_redirect_rules
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def compatible_redirect_rules=(value)
   end
 
@@ -13664,7 +13664,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkerTaskReachabilityRequest
 # The number of build ids that can be queried in a single API call is limited.
 # Open source users can adjust this limit by setting the server's dynamic config value for
 # `limit.reachabilityQueryBuildIds` with the caveat that this call can strain the visibility store.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def build_ids=(value)
   end
 
@@ -13690,7 +13690,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkerTaskReachabilityRequest
 # Must specify at least one task queue if querying for an unversioned worker.
 # The number of task queues that the server will fetch reachability information for is limited.
 # See the `GetWorkerTaskReachabilityResponse` documentation for more information.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queues=(value)
   end
 
@@ -13804,7 +13804,7 @@ class Temporalio::Api::WorkflowService::V1::GetWorkerTaskReachabilityResponse
 #
 # Open source users can adjust this limit by setting the server's dynamic config value for
 # `limit.reachabilityTaskQueueScan` with the caveat that this call can strain the visibility store.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def build_id_reachability=(value)
   end
 
@@ -14272,7 +14272,7 @@ class Temporalio::Api::WorkflowService::V1::StartBatchOperationRequest
 
   # Executions to apply the batch operation
 # This field and `visibility_query` are mutually exclusive
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -15062,7 +15062,7 @@ class Temporalio::Api::WorkflowService::V1::ListBatchOperationsResponse
   end
 
   # BatchOperationInfo contains the basic info about batch operation
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def operation_info=(value)
   end
 
@@ -15521,7 +15521,7 @@ class Temporalio::Api::WorkflowService::V1::PollNexusTaskQueueRequest
   end
 
   # Worker info to be sent to the server.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def worker_heartbeat=(value)
   end
 
@@ -15670,7 +15670,7 @@ class Temporalio::Api::WorkflowService::V1::PollNexusTaskQueueResponse
 #   2. Try to assign the next poll to a group without any pending polls,
 #   3. If every group has some pending polls, assign the next poll to a group randomly
 #     according to the weights.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def poller_group_infos=(value)
   end
 
@@ -16124,7 +16124,7 @@ class Temporalio::Api::WorkflowService::V1::ExecuteMultiOperationRequest
 # - The only valid list of operations at this time is [StartWorkflow, UpdateWorkflow], in this order.
 #
 # Note that additional operation-specific restrictions have to be considered.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def operations=(value)
   end
 
@@ -16212,7 +16212,7 @@ class Temporalio::Api::WorkflowService::V1::ExecuteMultiOperationResponse
   def responses
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def responses=(value)
   end
 
@@ -18792,7 +18792,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkerDeploymentVersionRespo
   end
 
   # All the Task Queues that have ever polled from this Deployment version.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def version_task_queues=(value)
   end
 
@@ -19127,7 +19127,7 @@ class Temporalio::Api::WorkflowService::V1::ListDeploymentsResponse
   def deployments
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def deployments=(value)
   end
 
@@ -20411,7 +20411,7 @@ class Temporalio::Api::WorkflowService::V1::ListWorkerDeploymentsResponse
   end
 
   # The list of worker deployments.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def worker_deployments=(value)
   end
 
@@ -20956,7 +20956,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerDeploymentVersionCompute
   def initialize(
     namespace: "",
     deployment_version: nil,
-    compute_config_scaling_groups: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroupUpdate),
+    compute_config_scaling_groups: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroupUpdate),
     remove_compute_config_scaling_groups: [],
     identity: "",
     request_id: ""
@@ -20998,7 +20998,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerDeploymentVersionCompute
 
   # Optional. Contains the compute config scaling groups to add or update for the Worker
 # Deployment.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def compute_config_scaling_groups=(value)
   end
 
@@ -21014,7 +21014,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerDeploymentVersionCompute
   end
 
   # Optional. Contains the compute config scaling groups to remove from the Worker Deployment.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def remove_compute_config_scaling_groups=(value)
   end
 
@@ -21149,7 +21149,7 @@ class Temporalio::Api::WorkflowService::V1::ValidateWorkerDeploymentVersionCompu
   def initialize(
     namespace: "",
     deployment_version: nil,
-    compute_config_scaling_groups: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroupUpdate),
+    compute_config_scaling_groups: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Compute::V1::ComputeConfigScalingGroupUpdate),
     remove_compute_config_scaling_groups: [],
     identity: ""
   )
@@ -21190,7 +21190,7 @@ class Temporalio::Api::WorkflowService::V1::ValidateWorkerDeploymentVersionCompu
 
   # Optional. Contains the compute config scaling groups to add or update for the Worker
 # Deployment.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def compute_config_scaling_groups=(value)
   end
 
@@ -21206,7 +21206,7 @@ class Temporalio::Api::WorkflowService::V1::ValidateWorkerDeploymentVersionCompu
   end
 
   # Optional. Contains the compute config scaling groups to remove from the Worker Deployment.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def remove_compute_config_scaling_groups=(value)
   end
 
@@ -21322,7 +21322,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerDeploymentVersionMetadat
     namespace: "",
     version: "",
     deployment_version: nil,
-    upsert_entries: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    upsert_entries: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     remove_entries: [],
     identity: ""
   )
@@ -21374,7 +21374,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerDeploymentVersionMetadat
   def upsert_entries
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def upsert_entries=(value)
   end
 
@@ -21388,7 +21388,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateWorkerDeploymentVersionMetadat
   end
 
   # List of keys to remove from the metadata.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def remove_entries=(value)
   end
 
@@ -22641,7 +22641,7 @@ class Temporalio::Api::WorkflowService::V1::ListWorkflowRulesResponse
   def rules
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def rules=(value)
   end
 
@@ -22938,7 +22938,7 @@ class Temporalio::Api::WorkflowService::V1::RecordWorkerHeartbeatRequest
   def worker_heartbeat
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def worker_heartbeat=(value)
   end
 
@@ -23217,7 +23217,7 @@ class Temporalio::Api::WorkflowService::V1::ListWorkersResponse
 
   # Deprecated: Use workers instead. This field returns full WorkerInfo which
 # includes expensive runtime metrics. We will stop populating this field in the future.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def workers_info=(value)
   end
 
@@ -23233,7 +23233,7 @@ class Temporalio::Api::WorkflowService::V1::ListWorkersResponse
   end
 
   # Limited worker information.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def workers=(value)
   end
 
@@ -23313,7 +23313,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateTaskQueueConfigRequest
     task_queue_type: :TASK_QUEUE_TYPE_UNSPECIFIED,
     update_queue_rate_limit: nil,
     update_fairness_key_rate_limit_default: nil,
-    set_fairness_weight_overrides: ::Google::Protobuf::Map.new(:string, :float),
+    set_fairness_weight_overrides: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :float),
     unset_fairness_weight_overrides: []
   )
   end
@@ -23422,7 +23422,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateTaskQueueConfigRequest
 
   # If set, overrides the fairness weight for each specified fairness key.
 # Fairness keys not listed in this map will keep their existing overrides (if any).
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def set_fairness_weight_overrides=(value)
   end
 
@@ -23442,7 +23442,7 @@ class Temporalio::Api::WorkflowService::V1::UpdateTaskQueueConfigRequest
   # If set, removes any existing fairness weight overrides for each specified fairness key.
 # Fairness weights for corresponding keys fall back to the values set during task creation (if any),
 # or to the default weight of 1.0.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def unset_fairness_weight_overrides=(value)
   end
 
@@ -25034,7 +25034,7 @@ class Temporalio::Api::WorkflowService::V1::StartActivityExecutionRequest
 
   # Callbacks to be called by the server when this activity reaches a terminal state.
 # Callback addresses must be whitelisted in the server's dynamic configuration.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def completion_callbacks=(value)
   end
 
@@ -25052,7 +25052,7 @@ class Temporalio::Api::WorkflowService::V1::StartActivityExecutionRequest
 
   # Links to be associated with the activity. Callbacks may also have associated links;
 # links already included with a callback should not be duplicated here.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -25522,7 +25522,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeActivityExecutionResponse
   end
 
   # Callbacks attached to this activity execution and their current state.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def callbacks=(value)
   end
 
@@ -25860,7 +25860,7 @@ class Temporalio::Api::WorkflowService::V1::ListActivityExecutionsResponse
   def executions
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def executions=(value)
   end
 
@@ -25955,7 +25955,7 @@ class Temporalio::Api::WorkflowService::V1::StartNexusOperationExecutionRequest
     id_reuse_policy: :NEXUS_OPERATION_ID_REUSE_POLICY_UNSPECIFIED,
     id_conflict_policy: :NEXUS_OPERATION_ID_CONFLICT_POLICY_UNSPECIFIED,
     search_attributes: nil,
-    nexus_header: ::Google::Protobuf::Map.new(:string, :string),
+    nexus_header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     user_metadata: nil
   )
   end
@@ -26240,7 +26240,7 @@ class Temporalio::Api::WorkflowService::V1::StartNexusOperationExecutionRequest
 # This is useful for propagating tracing information.
 # Note these headers are not the same as Temporal headers on internal activities and child workflows, these are
 # transmitted to Nexus operations that may be external and are not traditional payloads.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def nexus_header=(value)
   end
 
@@ -27101,7 +27101,7 @@ class Temporalio::Api::WorkflowService::V1::ListNexusOperationExecutionsResponse
   def operations
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def operations=(value)
   end
 
@@ -27284,7 +27284,7 @@ class Temporalio::Api::WorkflowService::V1::CountActivityExecutionsResponse
 
   # Contains the groups if the request is grouping by a field.
 # The list might not be complete, and the counts of each group is approximate.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def groups=(value)
   end
 
@@ -27457,7 +27457,7 @@ class Temporalio::Api::WorkflowService::V1::CountNexusOperationExecutionsRespons
 
   # Contains the groups if the request is grouping by a field.
 # The list might not be complete, and the counts of each group is approximate.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def groups=(value)
   end
 
@@ -28585,7 +28585,7 @@ class Temporalio::Api::WorkflowService::V1::CountWorkflowExecutionsResponse::Agg
   def group_values
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def group_values=(value)
   end
 
@@ -29029,7 +29029,7 @@ class Temporalio::Api::WorkflowService::V1::CountSchedulesResponse::AggregationG
   def group_values
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def group_values=(value)
   end
 
@@ -30011,7 +30011,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkerDeploymentVersionRespo
     name: "",
     type: :TASK_QUEUE_TYPE_UNSPECIFIED,
     stats: nil,
-    stats_by_priority_key: ::Google::Protobuf::Map.new(:int32, :message, Temporalio::Api::TaskQueue::V1::TaskQueueStats)
+    stats_by_priority_key: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:int32, :message, Temporalio::Api::TaskQueue::V1::TaskQueueStats)
   )
   end
 
@@ -30066,7 +30066,7 @@ class Temporalio::Api::WorkflowService::V1::DescribeWorkerDeploymentVersionRespo
 # Only set if `report_task_queue_stats` is set to true in the request.
 # (-- api-linter: core::0140::prepositions=disabled
 #     aip.dev/not-precedent: "by" is used to clarify the key. --)
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def stats_by_priority_key=(value)
   end
 
@@ -30350,7 +30350,7 @@ class Temporalio::Api::WorkflowService::V1::CountActivityExecutionsResponse::Agg
   def group_values
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def group_values=(value)
   end
 
@@ -30423,7 +30423,7 @@ class Temporalio::Api::WorkflowService::V1::CountNexusOperationExecutionsRespons
   def group_values
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def group_values=(value)
   end
 

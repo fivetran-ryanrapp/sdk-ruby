@@ -24,7 +24,7 @@ class Temporalio::Api::Namespace::V1::NamespaceInfo
     state: :NAMESPACE_STATE_UNSPECIFIED,
     description: "",
     owner_email: "",
-    data: ::Google::Protobuf::Map.new(:string, :string),
+    data: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     id: "",
     capabilities: nil,
     limits: nil,
@@ -86,7 +86,7 @@ class Temporalio::Api::Namespace::V1::NamespaceInfo
   end
 
   # A key-value map for any customized purpose.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def data=(value)
   end
 
@@ -210,7 +210,7 @@ class Temporalio::Api::Namespace::V1::NamespaceConfig
     history_archival_uri: "",
     visibility_archival_state: :ARCHIVAL_STATE_UNSPECIFIED,
     visibility_archival_uri: "",
-    custom_search_attribute_aliases: ::Google::Protobuf::Map.new(:string, :string)
+    custom_search_attribute_aliases: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string)
   )
   end
 
@@ -298,7 +298,7 @@ class Temporalio::Api::Namespace::V1::NamespaceConfig
   end
 
   # Map from field name to alias.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def custom_search_attribute_aliases=(value)
   end
 
@@ -350,7 +350,7 @@ class Temporalio::Api::Namespace::V1::BadBinaries
     ).void
   end
   def initialize(
-    binaries: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Namespace::V1::BadBinaryInfo)
+    binaries: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Namespace::V1::BadBinaryInfo)
   )
   end
 
@@ -358,7 +358,7 @@ class Temporalio::Api::Namespace::V1::BadBinaries
   def binaries
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def binaries=(value)
   end
 
@@ -501,7 +501,7 @@ class Temporalio::Api::Namespace::V1::UpdateNamespaceInfo
   def initialize(
     description: "",
     owner_email: "",
-    data: ::Google::Protobuf::Map.new(:string, :string),
+    data: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     state: :NAMESPACE_STATE_UNSPECIFIED
   )
   end
@@ -540,7 +540,7 @@ class Temporalio::Api::Namespace::V1::UpdateNamespaceInfo
   # A key-value map for any customized purpose.
 # If data already exists on the namespace,
 # this will merge with the existing key values.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def data=(value)
   end
 

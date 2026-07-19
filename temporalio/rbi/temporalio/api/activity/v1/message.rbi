@@ -919,7 +919,7 @@ class Temporalio::Api::Activity::V1::ActivityExecutionInfo
   end
 
   # Links to related entities, such as the entity that started this activity.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 

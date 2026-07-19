@@ -227,7 +227,7 @@ class Temporalio::Api::Version::V1::VersionInfo
   def alerts
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def alerts=(value)
   end
 

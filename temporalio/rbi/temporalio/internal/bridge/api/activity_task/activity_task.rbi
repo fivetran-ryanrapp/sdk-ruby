@@ -136,7 +136,7 @@ class Temporalio::Internal::Bridge::Api::ActivityTask::Start
     workflow_execution: nil,
     activity_id: "",
     activity_type: "",
-    header_fields: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    header_fields: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     input: [],
     heartbeat_details: [],
     scheduled_time: nil,
@@ -232,7 +232,7 @@ class Temporalio::Internal::Bridge::Api::ActivityTask::Start
   def header_fields
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def header_fields=(value)
   end
 
@@ -246,7 +246,7 @@ class Temporalio::Internal::Bridge::Api::ActivityTask::Start
   end
 
   # Arguments to the activity
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def input=(value)
   end
 
@@ -261,7 +261,7 @@ class Temporalio::Internal::Bridge::Api::ActivityTask::Start
   end
 
   # The last details that were recorded by a heartbeat when this task was generated
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def heartbeat_details=(value)
   end
 

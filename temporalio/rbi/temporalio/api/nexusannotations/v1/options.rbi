@@ -39,7 +39,7 @@ class Nexusannotations::V1::OperationOptions
   end
 
   # Tags to attach to the operation. Used by code generators to include and exclude operations.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def tags=(value)
   end
 
@@ -118,7 +118,7 @@ class Nexusannotations::V1::ServiceOptions
   end
 
   # Tags to attach to the service. Used by code generators to include and exclude services.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def tags=(value)
   end
 

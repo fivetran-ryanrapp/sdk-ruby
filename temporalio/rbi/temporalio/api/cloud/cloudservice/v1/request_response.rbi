@@ -280,7 +280,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetUsersResponse
   end
 
   # The list of users in ascending ids order
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def users=(value)
   end
 
@@ -1291,7 +1291,7 @@ class Temporalio::Api::Cloud::CloudService::V1::CreateNamespaceRequest
   def initialize(
     spec: nil,
     async_operation_id: "",
-    tags: ::Google::Protobuf::Map.new(:string, :string)
+    tags: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string)
   )
   end
 
@@ -1336,7 +1336,7 @@ class Temporalio::Api::Cloud::CloudService::V1::CreateNamespaceRequest
 
   # The tags to add to the namespace.
 # Note: This field can be set by global admins or account owners only.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def tags=(value)
   end
 
@@ -1588,7 +1588,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetNamespacesResponse
   end
 
   # The list of namespaces in ascending name order.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def namespaces=(value)
   end
 
@@ -2901,7 +2901,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetRegionsResponse
   end
 
   # The temporal cloud regions.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def regions=(value)
   end
 
@@ -3231,7 +3231,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetApiKeysResponse
   end
 
   # The list of api keys in ascending id order.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def api_keys=(value)
   end
 
@@ -4090,7 +4090,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetNexusEndpointsResponse
   end
 
   # The list of endpoints in ascending id order.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def endpoints=(value)
   end
 
@@ -4940,7 +4940,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetUserGroupsResponse
   end
 
   # The list of groups in ascending name order.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def groups=(value)
   end
 
@@ -6265,7 +6265,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetUserGroupMembersResponse
   end
 
   # The list of group members
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def members=(value)
   end
 
@@ -6708,7 +6708,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetServiceAccountsResponse
   end
 
   # The list of service accounts in ascending ID order.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def service_account=(value)
   end
 
@@ -7460,7 +7460,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetUsageResponse
 
   # The list of data based on granularity (per Day for now)
 # Ordered by: time range in ascending order
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def summaries=(value)
   end
 
@@ -8204,7 +8204,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetNamespaceExportSinksResponse
   end
 
   # The list of export sinks retrieved.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def sinks=(value)
   end
 
@@ -8750,7 +8750,7 @@ class Temporalio::Api::Cloud::CloudService::V1::UpdateNamespaceTagsRequest
   end
   def initialize(
     namespace: "",
-    tags_to_upsert: ::Google::Protobuf::Map.new(:string, :string),
+    tags_to_upsert: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     tags_to_remove: [],
     async_operation_id: ""
   )
@@ -8781,7 +8781,7 @@ class Temporalio::Api::Cloud::CloudService::V1::UpdateNamespaceTagsRequest
   # A list of tags to add or update.
 # If a key of an existing tag is added, the tag's value is updated.
 # At least one of tags_to_upsert or tags_to_remove must be specified.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def tags_to_upsert=(value)
   end
 
@@ -8802,7 +8802,7 @@ class Temporalio::Api::Cloud::CloudService::V1::UpdateNamespaceTagsRequest
   # A list of tag keys to remove.
 # If a tag key doesn't exist, it is silently ignored.
 # At least one of tags_to_upsert or tags_to_remove must be specified.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def tags_to_remove=(value)
   end
 
@@ -9329,7 +9329,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetConnectivityRulesResponse
   end
 
   # connectivity_rules returned
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def connectivity_rules=(value)
   end
 
@@ -9688,7 +9688,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetAuditLogsResponse
   end
 
   # The list of audit logs ordered by emit time, log_id
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def logs=(value)
   end
 
@@ -10216,7 +10216,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetAccountAuditLogSinksResponse
   end
 
   # The list of audit log sinks retrieved.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def sinks=(value)
   end
 
@@ -11108,7 +11108,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetCustomRolesResponse
   end
 
   # The list of custom roles in ascending ID order.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def custom_roles=(value)
   end
 
@@ -11916,7 +11916,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetUserNamespaceAssignmentsRespo
   end
 
   # The list of users with access to the namespace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def users=(value)
   end
 
@@ -12094,7 +12094,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetServiceAccountNamespaceAssign
   end
 
   # The list of service accounts with access to the namespace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def service_accounts=(value)
   end
 
@@ -12272,7 +12272,7 @@ class Temporalio::Api::Cloud::CloudService::V1::GetUserGroupNamespaceAssignments
   end
 
   # The list of user groups with access to the namespace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def groups=(value)
   end
 

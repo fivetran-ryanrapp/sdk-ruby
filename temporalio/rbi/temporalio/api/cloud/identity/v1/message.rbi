@@ -88,7 +88,7 @@ class Temporalio::Api::Cloud::Identity::V1::AccountAccess
 
   # List of custom role IDs assigned to the user or service account.
 # temporal:versioning:min_version=v0.13.0
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def custom_roles=(value)
   end
 
@@ -244,7 +244,7 @@ class Temporalio::Api::Cloud::Identity::V1::Access
   end
   def initialize(
     account_access: nil,
-    namespace_accesses: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Cloud::Identity::V1::NamespaceAccess),
+    namespace_accesses: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Cloud::Identity::V1::NamespaceAccess),
     custom_roles_deprecated: []
   )
   end
@@ -272,7 +272,7 @@ class Temporalio::Api::Cloud::Identity::V1::Access
 
   # The map of namespace accesses
 # The key is the namespace name and the value is the access to the namespace
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def namespace_accesses=(value)
   end
 
@@ -292,7 +292,7 @@ class Temporalio::Api::Cloud::Identity::V1::Access
   # List of custom role IDs assigned to the user or service account.
 # Deprecated: Not supported after v0.12.0 api version. Use account_access.custom_roles instead.
 # temporal:versioning:max_version=v0.12.0
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def custom_roles_deprecated=(value)
   end
 
@@ -2232,7 +2232,7 @@ class Temporalio::Api::Cloud::Identity::V1::CustomRoleSpec
   end
 
   # The permissions assigned to the custom role.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def permissions=(value)
   end
 
@@ -2876,7 +2876,7 @@ class Temporalio::Api::Cloud::Identity::V1::CustomRoleSpec::Resources
   end
 
   # The resource IDs the permission applies to. Can be empty if allow_all is true.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def resource_ids=(value)
   end
 
@@ -2970,7 +2970,7 @@ class Temporalio::Api::Cloud::Identity::V1::CustomRoleSpec::Permission
   end
 
   # The actions allowed by the permission.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def actions=(value)
   end
 

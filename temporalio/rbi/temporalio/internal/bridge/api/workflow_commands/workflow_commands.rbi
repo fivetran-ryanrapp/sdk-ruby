@@ -548,7 +548,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleActivity
     activity_id: "",
     activity_type: "",
     task_queue: "",
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     arguments: [],
     schedule_to_close_timeout: nil,
     schedule_to_start_timeout: nil,
@@ -620,7 +620,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleActivity
   def headers
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -634,7 +634,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleActivity
   end
 
   # Arguments/input to the activity. Called "input" upstream.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def arguments=(value)
   end
 
@@ -865,7 +865,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleLocalActivity
     activity_type: "",
     attempt: 0,
     original_schedule_time: nil,
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     arguments: [],
     schedule_to_close_timeout: nil,
     schedule_to_start_timeout: nil,
@@ -958,7 +958,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleLocalActivity
   def headers
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -972,7 +972,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleLocalActivity
   end
 
   # Arguments/input to the activity.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def arguments=(value)
   end
 
@@ -1570,8 +1570,8 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ContinueAsNewWorkflow
     arguments: [],
     workflow_run_timeout: nil,
     workflow_task_timeout: nil,
-    memo: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    memo: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     search_attributes: nil,
     retry_policy: nil,
     versioning_intent: :UNSPECIFIED,
@@ -1618,7 +1618,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ContinueAsNewWorkflow
 
   # Inputs to the workflow code. Should be specified. Will not re-use old arguments, as that
 # typically wouldn't make any sense.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def arguments=(value)
   end
 
@@ -1664,7 +1664,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ContinueAsNewWorkflow
   end
 
   # If set, the new workflow will have this memo. If unset, re-uses the current workflow's memo
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def memo=(value)
   end
 
@@ -1681,7 +1681,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ContinueAsNewWorkflow
 
   # If set, the new workflow will have these headers. Will *not* re-use current workflow's
 # headers otherwise.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -1984,8 +1984,8 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::StartChildWorkflowExe
     workflow_id_reuse_policy: :WORKFLOW_ID_REUSE_POLICY_UNSPECIFIED,
     retry_policy: nil,
     cron_schedule: "",
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
-    memo: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    memo: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     search_attributes: nil,
     cancellation_type: :ABANDON,
     versioning_intent: :UNSPECIFIED,
@@ -2060,7 +2060,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::StartChildWorkflowExe
   def input
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def input=(value)
   end
 
@@ -2176,7 +2176,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::StartChildWorkflowExe
   end
 
   # Header fields
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -2191,7 +2191,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::StartChildWorkflowExe
   end
 
   # Memo fields
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def memo=(value)
   end
 
@@ -2492,7 +2492,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::SignalExternalWorkflo
     child_workflow_id: "",
     signal_name: "",
     args: [],
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -2562,7 +2562,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::SignalExternalWorkflo
   end
 
   # Arguments for the handler
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def args=(value)
   end
 
@@ -2577,7 +2577,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::SignalExternalWorkflo
   end
 
   # Headers to attach to the signal
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -2980,7 +2980,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleNexusOperatio
     operation: "",
     input: nil,
     schedule_to_close_timeout: nil,
-    nexus_header: ::Google::Protobuf::Map.new(:string, :string),
+    nexus_header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     cancellation_type: :WAIT_CANCELLATION_COMPLETED,
     schedule_to_start_timeout: nil,
     start_to_close_timeout: nil
@@ -3108,7 +3108,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCommands::ScheduleNexusOperatio
 # tracing information. Note these headers are not the same as Temporal headers on internal
 # activities and child workflows, these are transmitted to Nexus operations that may be
 # external and are not traditional payloads.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def nexus_header=(value)
   end
 

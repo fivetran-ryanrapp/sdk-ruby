@@ -13,7 +13,7 @@ class Temporalio::Api::OperatorService::V1::AddSearchAttributesRequest
     ).void
   end
   def initialize(
-    search_attributes: ::Google::Protobuf::Map.new(:string, :enum),
+    search_attributes: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :enum),
     namespace: ""
   )
   end
@@ -24,7 +24,7 @@ class Temporalio::Api::OperatorService::V1::AddSearchAttributesRequest
   end
 
   # Mapping between search attribute name and its IndexedValueType.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def search_attributes=(value)
   end
 
@@ -140,7 +140,7 @@ class Temporalio::Api::OperatorService::V1::RemoveSearchAttributesRequest
   end
 
   # Search attribute names to delete.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def search_attributes=(value)
   end
 
@@ -305,9 +305,9 @@ class Temporalio::Api::OperatorService::V1::ListSearchAttributesResponse
     ).void
   end
   def initialize(
-    custom_attributes: ::Google::Protobuf::Map.new(:string, :enum),
-    system_attributes: ::Google::Protobuf::Map.new(:string, :enum),
-    storage_schema: ::Google::Protobuf::Map.new(:string, :string)
+    custom_attributes: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :enum),
+    system_attributes: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :enum),
+    storage_schema: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string)
   )
   end
 
@@ -317,7 +317,7 @@ class Temporalio::Api::OperatorService::V1::ListSearchAttributesResponse
   end
 
   # Mapping between custom (user-registered) search attribute name to its IndexedValueType.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def custom_attributes=(value)
   end
 
@@ -332,7 +332,7 @@ class Temporalio::Api::OperatorService::V1::ListSearchAttributesResponse
   end
 
   # Mapping between system (predefined) search attribute name to its IndexedValueType.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def system_attributes=(value)
   end
 
@@ -347,7 +347,7 @@ class Temporalio::Api::OperatorService::V1::ListSearchAttributesResponse
   end
 
   # Mapping from the attribute name to the visibility storage native type.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def storage_schema=(value)
   end
 
@@ -900,7 +900,7 @@ class Temporalio::Api::OperatorService::V1::ListClustersResponse
   end
 
   # List of all cluster information
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def clusters=(value)
   end
 
@@ -1794,7 +1794,7 @@ class Temporalio::Api::OperatorService::V1::ListNexusEndpointsResponse
   def endpoints
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def endpoints=(value)
   end
 

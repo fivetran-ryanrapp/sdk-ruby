@@ -476,7 +476,7 @@ class Temporalio::Api::Update::V1::Request
   end
 
   # Callbacks to be called by the server when this update reaches a terminal state.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def completion_callbacks=(value)
   end
 
@@ -491,7 +491,7 @@ class Temporalio::Api::Update::V1::Request
   end
 
   # Links to be associated with this update.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 

@@ -350,7 +350,7 @@ class Temporalio::Api::ErrorDetails::V1::NamespaceInvalidStateFailure
 
   # Allowed namespace states for requested operation.
 # For example NAMESPACE_STATE_DELETED is forbidden for most operations but allowed for DescribeNamespace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def allowed_states=(value)
   end
 
@@ -1100,7 +1100,7 @@ class Temporalio::Api::ErrorDetails::V1::MultiOperationExecutionFailure
   # One status for each requested operation from the failed MultiOperation. The failed
 # operation(s) have the same error details as if it was executed separately. All other operations have the
 # status code `Aborted` and `MultiOperationExecutionAborted` is added to the details field.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def statuses=(value)
   end
 
@@ -1347,7 +1347,7 @@ class Temporalio::Api::ErrorDetails::V1::MultiOperationExecutionFailure::Operati
   def details
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def details=(value)
   end
 

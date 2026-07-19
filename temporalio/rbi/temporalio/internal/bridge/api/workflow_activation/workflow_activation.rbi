@@ -154,7 +154,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::WorkflowActivation
   end
 
   # The things to do upon activating the workflow
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def jobs=(value)
   end
 
@@ -173,7 +173,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::WorkflowActivation
   # Internal flags which are available for use by lang. If `is_replaying` is false, all
 # internal flags may be used. This is not a delta - all previously used flags always
 # appear since this representation is cheap.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def available_internal_flags=(value)
   end
 
@@ -272,7 +272,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::WorkflowActivation
   # Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
 # For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
 # of the previous run.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def suggest_continue_as_new_reasons=(value)
   end
 
@@ -712,7 +712,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::InitializeWorkflow
     workflow_id: "",
     arguments: [],
     randomness_seed: 0,
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     identity: "",
     parent_workflow_info: nil,
     workflow_execution_timeout: nil,
@@ -772,7 +772,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::InitializeWorkflow
   end
 
   # Inputs to the workflow code
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def arguments=(value)
   end
 
@@ -805,7 +805,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::InitializeWorkflow
   end
 
   # Used to add metadata e.g. for tracing and auth, meant to be read and written to by interceptors.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -1822,7 +1822,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::QueryWorkflow
     query_id: "",
     query_type: "",
     arguments: [],
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -1866,7 +1866,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::QueryWorkflow
   def arguments
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def arguments=(value)
   end
 
@@ -1880,7 +1880,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::QueryWorkflow
   end
 
   # Headers attached to the query
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -2002,7 +2002,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::SignalWorkflow
     signal_name: "",
     input: [],
     identity: "",
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload)
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload)
   )
   end
 
@@ -2022,7 +2022,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::SignalWorkflow
   def input
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def input=(value)
   end
 
@@ -2051,7 +2051,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::SignalWorkflow
   end
 
   # Headers attached to the signal
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 
@@ -2347,7 +2347,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::DoUpdate
     protocol_instance_id: "",
     name: "",
     input: [],
-    headers: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payload),
+    headers: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payload),
     meta: nil,
     run_validator: false
   )
@@ -2407,7 +2407,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::DoUpdate
   end
 
   # The input to the update
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def input=(value)
   end
 
@@ -2422,7 +2422,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowActivation::DoUpdate
   end
 
   # Headers attached to the update
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def headers=(value)
   end
 

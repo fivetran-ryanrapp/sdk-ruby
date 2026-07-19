@@ -122,7 +122,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCompletion::Success
   end
 
   # A list of commands to send back to the temporal server
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def commands=(value)
   end
 
@@ -137,7 +137,7 @@ class Temporalio::Internal::Bridge::Api::WorkflowCompletion::Success
   end
 
   # Any internal flags which the lang SDK used in the processing of this activation
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def used_internal_flags=(value)
   end
 

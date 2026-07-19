@@ -20,7 +20,7 @@ class Temporalio::Api::Nexus::V1::Failure
   def initialize(
     message: "",
     stack_trace: "",
-    metadata: ::Google::Protobuf::Map.new(:string, :string),
+    metadata: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     details: "",
     cause: nil
   )
@@ -54,7 +54,7 @@ class Temporalio::Api::Nexus::V1::Failure
   def metadata
   end
 
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def metadata=(value)
   end
 
@@ -389,7 +389,7 @@ class Temporalio::Api::Nexus::V1::StartOperationRequest
     request_id: "",
     callback: "",
     payload: nil,
-    callback_header: ::Google::Protobuf::Map.new(:string, :string),
+    callback_header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     links: []
   )
   end
@@ -475,7 +475,7 @@ class Temporalio::Api::Nexus::V1::StartOperationRequest
   end
 
   # Header that is expected to be attached to the callback request when the operation completes.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def callback_header=(value)
   end
 
@@ -490,7 +490,7 @@ class Temporalio::Api::Nexus::V1::StartOperationRequest
   end
 
   # Links contain caller information and can be attached to the operations started by the handler.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -668,7 +668,7 @@ class Temporalio::Api::Nexus::V1::Request
     ).void
   end
   def initialize(
-    header: ::Google::Protobuf::Map.new(:string, :string),
+    header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     scheduled_time: nil,
     capabilities: nil,
     start_operation: nil,
@@ -685,7 +685,7 @@ class Temporalio::Api::Nexus::V1::Request
 
   # Headers extracted from the original request in the Temporal frontend.
 # When using Nexus over HTTP, this includes the request's HTTP headers ignoring multiple values.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def header=(value)
   end
 
@@ -1642,7 +1642,7 @@ class Temporalio::Api::Nexus::V1::NexusOperationExecutionInfo
     operation_token: "",
     state_transition_count: 0,
     search_attributes: nil,
-    nexus_header: ::Google::Protobuf::Map.new(:string, :string),
+    nexus_header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     user_metadata: nil,
     links: [],
     identity: "",
@@ -2046,7 +2046,7 @@ class Temporalio::Api::Nexus::V1::NexusOperationExecutionInfo
   end
 
   # Header for context propagation and tracing purposes.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def nexus_header=(value)
   end
 
@@ -2076,7 +2076,7 @@ class Temporalio::Api::Nexus::V1::NexusOperationExecutionInfo
   end
 
   # Links attached by the handler of this operation on start or completion.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -2501,7 +2501,7 @@ class Temporalio::Api::Nexus::V1::StartOperationResponse::Sync
   def links
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -2581,7 +2581,7 @@ class Temporalio::Api::Nexus::V1::StartOperationResponse::Async
   def links
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 

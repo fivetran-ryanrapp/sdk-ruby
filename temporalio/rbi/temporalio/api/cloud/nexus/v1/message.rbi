@@ -70,7 +70,7 @@ class Temporalio::Api::Cloud::Nexus::V1::EndpointSpec
   # The set of policies (e.g. authorization) for the endpoint. Each request's caller
 # must match with at least one of the specs to be accepted by the endpoint.
 # This field is mutable.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def policy_specs=(value)
   end
 

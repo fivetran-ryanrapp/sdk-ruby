@@ -17,7 +17,7 @@ class Temporalio::Api::Sdk::V1::ExternalStorageReference
   end
   def initialize(
     driver_name: "",
-    claim_data: ::Google::Protobuf::Map.new(:string, :string)
+    claim_data: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string)
   )
   end
 
@@ -42,7 +42,7 @@ class Temporalio::Api::Sdk::V1::ExternalStorageReference
   end
 
   # Driver-specific key-value pairs that identify and provide access to the stored payload.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def claim_data=(value)
   end
 

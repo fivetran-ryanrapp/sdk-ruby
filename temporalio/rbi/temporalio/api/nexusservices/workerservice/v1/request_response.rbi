@@ -21,7 +21,7 @@ class Temporalio::Api::Nexusservices::Workerservice::V1::ExecuteCommandsRequest
   def commands
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def commands=(value)
   end
 
@@ -82,7 +82,7 @@ class Temporalio::Api::Nexusservices::Workerservice::V1::ExecuteCommandsResponse
   def results
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def results=(value)
   end
 

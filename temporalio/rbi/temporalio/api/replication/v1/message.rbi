@@ -95,7 +95,7 @@ class Temporalio::Api::Replication::V1::NamespaceReplicationConfig
   def clusters
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def clusters=(value)
   end
 

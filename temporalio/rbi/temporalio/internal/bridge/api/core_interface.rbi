@@ -35,7 +35,7 @@ class Temporalio::Internal::Bridge::Api::CoreInterface::ActivityHeartbeat
   def details
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def details=(value)
   end
 

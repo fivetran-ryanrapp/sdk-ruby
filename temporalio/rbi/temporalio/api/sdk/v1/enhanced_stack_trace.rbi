@@ -16,7 +16,7 @@ class Temporalio::Api::Sdk::V1::EnhancedStackTrace
   end
   def initialize(
     sdk: nil,
-    sources: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Sdk::V1::StackTraceFileSlice),
+    sources: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Sdk::V1::StackTraceFileSlice),
     stacks: []
   )
   end
@@ -42,7 +42,7 @@ class Temporalio::Api::Sdk::V1::EnhancedStackTrace
   end
 
   # Mapping of file path to file contents.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def sources=(value)
   end
 
@@ -57,7 +57,7 @@ class Temporalio::Api::Sdk::V1::EnhancedStackTrace
   end
 
   # Collection of stacks captured.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def stacks=(value)
   end
 
@@ -435,7 +435,7 @@ class Temporalio::Api::Sdk::V1::StackTrace
   end
 
   # Collection of `FileLocation`s, each for a stack frame that comprise a stack trace.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def locations=(value)
   end
 

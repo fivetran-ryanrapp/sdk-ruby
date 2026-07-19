@@ -367,7 +367,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueVersionSelection
   end
 
   # Include specific Build IDs.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def build_ids=(value)
   end
 
@@ -453,7 +453,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueVersionInfo
     ).void
   end
   def initialize(
-    types_info: ::Google::Protobuf::Map.new(:int32, :message, Temporalio::Api::TaskQueue::V1::TaskQueueTypeInfo),
+    types_info: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:int32, :message, Temporalio::Api::TaskQueue::V1::TaskQueueTypeInfo),
     task_reachability: :BUILD_ID_TASK_REACHABILITY_UNSPECIFIED
   )
   end
@@ -464,7 +464,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueVersionInfo
   end
 
   # Task Queue info per Task Type. Key is the numerical value of the temporal.api.enums.v1.TaskQueueType enum.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def types_info=(value)
   end
 
@@ -567,7 +567,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueTypeInfo
   end
 
   # Unversioned workers (with `useVersioning=false`) are reported in unversioned result even if they set a Build ID.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def pollers=(value)
   end
 
@@ -1336,7 +1336,7 @@ class Temporalio::Api::TaskQueue::V1::CompatibleVersionSet
   end
 
   # All the compatible versions, unordered, except for the last element, which is considered the set "default".
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def build_ids=(value)
   end
 
@@ -1417,7 +1417,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueReachability
   # Task reachability for a worker in a single task queue.
 # See the TaskReachability docstring for information about each enum variant.
 # If reachability is empty, this worker is considered unreachable in this task queue.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def reachability=(value)
   end
 
@@ -1499,7 +1499,7 @@ class Temporalio::Api::TaskQueue::V1::BuildIdReachability
   end
 
   # Reachability per task queue.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def task_queue_reachability=(value)
   end
 
@@ -2377,7 +2377,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueConfig
   def initialize(
     queue_rate_limit: nil,
     fairness_keys_rate_limit_default: nil,
-    fairness_weight_overrides: ::Google::Protobuf::Map.new(:string, :float)
+    fairness_weight_overrides: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :float)
   )
   end
 
@@ -2417,7 +2417,7 @@ class Temporalio::Api::TaskQueue::V1::TaskQueueConfig
   end
 
   # If set, overrides the fairness weights for the corresponding fairness keys.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def fairness_weight_overrides=(value)
   end
 

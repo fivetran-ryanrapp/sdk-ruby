@@ -58,7 +58,7 @@ class Temporalio::Api::Cloud::Usage::V1::Summary
   end
 
   # Records grouped by namespace
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def record_groups=(value)
   end
 
@@ -140,7 +140,7 @@ class Temporalio::Api::Cloud::Usage::V1::RecordGroup
   end
 
   # GroupBy keys and their values for this record group. Multiple fields are combined with logical AND.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def group_bys=(value)
   end
 
@@ -153,7 +153,7 @@ class Temporalio::Api::Cloud::Usage::V1::RecordGroup
   def records
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def records=(value)
   end
 

@@ -538,7 +538,7 @@ class Temporalio::Api::History::V1::WorkflowExecutionStartedEventAttributes
   end
 
   # Completion callbacks attached when this workflow was started.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def completion_callbacks=(value)
   end
 
@@ -1913,7 +1913,7 @@ class Temporalio::Api::History::V1::WorkflowTaskStartedEventAttributes
 
   # The reason(s) that suggest_continue_as_new is true, if it is.
 # Unset if suggest_continue_as_new is false.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def suggest_continue_as_new_reasons=(value)
   end
 
@@ -4282,7 +4282,7 @@ class Temporalio::Api::History::V1::MarkerRecordedEventAttributes
   end
   def initialize(
     marker_name: "",
-    details: ::Google::Protobuf::Map.new(:string, :message, Temporalio::Api::Common::V1::Payloads),
+    details: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :message, Temporalio::Api::Common::V1::Payloads),
     workflow_task_completed_event_id: 0,
     header: nil,
     failure: nil
@@ -4310,7 +4310,7 @@ class Temporalio::Api::History::V1::MarkerRecordedEventAttributes
   end
 
   # Serialized information recorded in the marker
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def details=(value)
   end
 
@@ -7309,7 +7309,7 @@ class Temporalio::Api::History::V1::WorkflowExecutionOptionsUpdatedEventAttribut
   end
 
   # Completion callbacks attached to the running workflow execution.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def attached_completion_callbacks=(value)
   end
 
@@ -7390,7 +7390,7 @@ class Temporalio::Api::History::V1::WorkflowExecutionOptionsUpdatedEventAttribut
   end
 
   # Updates to workflow updates options.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def workflow_update_options=(value)
   end
 
@@ -8406,7 +8406,7 @@ class Temporalio::Api::History::V1::NexusOperationScheduledEventAttributes
     operation: "",
     input: nil,
     schedule_to_close_timeout: nil,
-    nexus_header: ::Google::Protobuf::Map.new(:string, :string),
+    nexus_header: ::Google::Protobuf::Map[T.untyped, T.untyped].new(:string, :string),
     workflow_task_completed_event_id: 0,
     request_id: "",
     endpoint_id: "",
@@ -8524,7 +8524,7 @@ class Temporalio::Api::History::V1::NexusOperationScheduledEventAttributes
   # Header to attach to the Nexus request. Note these headers are not the same as Temporal headers on internal
 # activities and child workflows, these are transmitted to Nexus operations that may be external and are not
 # traditional payloads.
-  sig { params(value: ::Google::Protobuf::Map).void }
+  sig { params(value: ::Google::Protobuf::Map[T.untyped, T.untyped]).void }
   def nexus_header=(value)
   end
 
@@ -9782,7 +9782,7 @@ class Temporalio::Api::History::V1::HistoryEvent
   end
 
   # Links to related entities, such as the entity that started this event's workflow.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def links=(value)
   end
 
@@ -9812,7 +9812,7 @@ class Temporalio::Api::History::V1::HistoryEvent
   end
 
   # Event group markers attached to this event.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def event_group_markers=(value)
   end
 
@@ -10596,7 +10596,7 @@ class Temporalio::Api::History::V1::History
   def events
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def events=(value)
   end
 
@@ -10694,7 +10694,7 @@ class Temporalio::Api::History::V1::WorkflowExecutionOptionsUpdatedEventAttribut
   end
 
   # Completion callbacks attached to the running workflow update.
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def attached_completion_callbacks=(value)
   end
 

@@ -65,7 +65,7 @@ module Temporalio::Internal::ProtoUtils
 
   sig do
     params(
-      headers: T.nilable(Google::Protobuf::Map),
+      headers: T.nilable(Google::Protobuf::Map[T.untyped, T.untyped]),
       converter: T.any(Temporalio::Converters::DataConverter, Temporalio::Converters::PayloadConverter)
     ).returns(T.nilable(T::Hash[String, Temporalio::Api::Common::V1::Payload]))
   end

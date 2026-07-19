@@ -81,7 +81,7 @@ class Temporalio::Api::Export::V1::WorkflowExecutions
   def items
   end
 
-  sig { params(value: ::Google::Protobuf::RepeatedField).void }
+  sig { params(value: ::Google::Protobuf::RepeatedField[T.untyped]).void }
   def items=(value)
   end
 
