@@ -1,24 +1,17 @@
 name: Publish Fork Gem
-# Builds all platform gems from the publish-fork-fix branch and publishes them
-# to the fivetran-ryanrapp GitHub Packages gem registry so downstream projects
-# can install the pre-built binaries without needing to compile from source.
+# Builds all platform gems from the publish-fork-fix branch, publishes them
+# as GitHub Release assets at v1.6.0-rbi-fix, and prints nix SRI SHA256 hashes
+# in the step summary so they can be copied into giza's rubyenv.nix.
 #
-# Consumers add to their Gemfile:
-#   source "https://rubygems.pkg.github.com/fivetran-ryanrapp" do
-#     gem "temporalio", "1.6.0", require: false
-#   end
-#
-# And configure bundler auth (once per machine or in CI secrets):
-#   bundle config set --global https://rubygems.pkg.github.com/fivetran-ryanrapp \
-#     USERNAME:GITHUB_TOKEN
+# After a release build, copy the hashes from the job summary into:
+#   giza/nix/ruby/rubyenv.nix → gemConfig.temporalio → platformGems
 on:
   push:
     branches:
       - publish-fork-fix
 
 permissions:
-  contents: read
-  packages: write
+  contents: write
 
 jobs:
   build-platform-gems:
@@ -89,25 +82,51 @@ jobs:
     needs: build-platform-gems
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
       - name: Download all platform gems
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           path: gems
           merge-multiple: true
 
-      - name: Setup Ruby
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: "3.3"
-
-      - name: Publish to GitHub Packages
-        run: |
-          for gem in gems/*.gem; do
-            echo "Publishing $gem..."
-            gem push \
-              --key github \
-              --host https://rubygems.pkg.github.com/fivetran-ryanrapp \
-              "$gem"
-          done
+      - name: Publish GitHub Release and print nix hashes
         env:
-          GEM_HOST_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="v1.6.0-rbi-fix"
+
+          # Delete any previous release so re-runs are idempotent
+          gh release delete "$TAG" --cleanup-tag --yes 2>/dev/null || true
+
+          gh release create "$TAG" \
+            --title "temporalio 1.6.0 — RBI block param fix" \
+            --notes "Pre-built platform gems with \`def initialize(&block)\` fix in \`rbi/temporalio/workflow/future.rbi\`. Consume via \`gemConfig.temporalio\` in \`giza/nix/ruby/rubyenv.nix\`." \
+            gems/*.gem
+
+          # Print nix SRI hashes for each gem — copy these into rubyenv.nix
+          echo "## Nix SRI hashes for \`rubyenv.nix\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Copy into \`gemConfig.temporalio → platformGems\` in \`giza/nix/ruby/rubyenv.nix\`:" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| gem file | nix system | SRI hash |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|----------|------------|----------|" >> "$GITHUB_STEP_SUMMARY"
+
+          declare -A NIX_SYSTEM=(
+            ["arm64-darwin"]="aarch64-darwin"
+            ["x86_64-darwin"]="x86_64-darwin"
+            ["x86_64-linux"]="x86_64-linux"
+            ["aarch64-linux"]="aarch64-linux"
+            ["x86_64-linux-musl"]="x86_64-linux-musl (unused by nix)"
+            ["aarch64-linux-musl"]="aarch64-linux-musl (unused by nix)"
+          )
+
+          for gem in gems/*.gem; do
+            filename="$(basename "$gem")"
+            platform="${filename#temporalio-1.6.0-}"
+            platform="${platform%.gem}"
+            hash="sha256-$(openssl dgst -sha256 -binary "$gem" | base64 -w0)"
+            nix_system="${NIX_SYSTEM[$platform]:-$platform}"
+            echo "| \`$filename\` | \`$nix_system\` | \`$hash\` |" >> "$GITHUB_STEP_SUMMARY"
+          done
